@@ -13,37 +13,38 @@ import java.util.Iterator;
  */
 public class SalesPerson
 {
+
     private String name;
     private String title;
     private ArrayList<Double> sales;
-    
+
     public SalesPerson()
     {
         this.name = "unknown";
         this.title = "unkown";
         this.sales = new ArrayList<>();
     }
-    
+
     public void setName(String name)
     {
         this.name = name;
     }
-    
+
     public String getName()
     {
         return this.name;
     }
-    
+
     public void setTitle(String title)
     {
         this.title = title;
     }
-    
+
     public String getTitle()
     {
         return this.title;
     }
-    
+
     public void setSales(ArrayList<Double> sales)
     {
         for (int i = 0; i < sales.size(); i++)
@@ -51,7 +52,7 @@ public class SalesPerson
             this.sales.add(sales.get(i));
         }
     }
-    
+
     public ArrayList<Double> getSales()
     {
         return this.sales;

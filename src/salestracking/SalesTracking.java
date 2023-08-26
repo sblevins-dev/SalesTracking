@@ -68,14 +68,14 @@ public class SalesTracking
             sp.setSales(sales);
 
             salesPeople.add(sp);
-            
+
             System.out.println();
-            
+
             people--;
         } while (people > 0);
 
         sc.close();
-        
+
         createReport(salesPeople);
     }
 
@@ -86,16 +86,16 @@ public class SalesTracking
         System.out.print("Please enter sales figure for " + name + ": ");
         sale = sc.nextDouble();
         sc.nextLine();
-        
+
         return sale;
     }
-    
+
     public static void createReport(ArrayList<SalesPerson> salesPeople)
     {
         double companyTotal = 0.0;
         DecimalFormat fmt = new DecimalFormat("$#,#00.00");
         Iterator<SalesPerson> iterPerson = salesPeople.iterator();
-        
+
         while (iterPerson.hasNext())
         {
             SalesPerson s = iterPerson.next();
@@ -105,30 +105,29 @@ public class SalesTracking
             double max = 0.0;
             double avg = 0.0;
             int count = 0;
-            
-            
+
             Iterator<Double> iterSales = s.iterSales();
             while (iterSales.hasNext())
             {
                 sale = iterSales.next();
                 total += sale;
-                
+
                 if (sale < min)
                 {
                     min = sale;
                 }
-                
+
                 if (sale > max)
                 {
                     max = sale;
                 }
-                
+
                 count++;
             }
-            
+
             companyTotal += total;
             avg = (total / count);
-            
+
             System.out.println("Sales person: " + s.getName());
             System.out.println("Title: " + s.getTitle());
             System.out.println("Total Sales: " + fmt.format(total));
@@ -138,7 +137,7 @@ public class SalesTracking
             System.out.println("----------------------------------");
             System.out.println();
         }
-        
+
         System.out.println("Company total sales: " + fmt.format(companyTotal));
     }
 
