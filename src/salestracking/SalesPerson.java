@@ -58,6 +58,7 @@ public class SalesPerson
         return this.sales;
     }
 
+    // Iterator method for each sales in ArrayList
     Iterator<Double> iterSales()
     {
         return sales.iterator();
